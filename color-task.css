@@ -1,3 +1,11 @@
+div.issue {
+  background: #fffff5;
+}
+
+#header > h1 {
+  background: none;
+}
+
 .autoscroll {
   overflow: visible;
 }
@@ -19,36 +27,6 @@ table.list.time-entries tbody tr td:last-child:before, table.list.issues tbody t
   background: none;
 }
 
-table.list.time-entries tbody tr.status-6 td:last-child:before, table.list.issues tbody tr.status-6 td:last-child:before {
-  background: -webkit-gradient(linear, right top, left top, from(#4d4d4d), to(#343434));
-  background: linear-gradient(to left, #4d4d4d 0%, #343434 100%);
-}
-
-table.list.time-entries tbody tr.status-5 td:last-child:before, table.list.issues tbody tr.status-5 td:last-child:before {
-  background: -webkit-gradient(linear, right top, left top, from(#4d4d4d), to(#343434));
-  background: linear-gradient(to left, #4d4d4d 0%, #343434 100%);
-}
-
-table.list.time-entries tbody tr.status-4 td:last-child:before, table.list.issues tbody tr.status-4 td:last-child:before {
-  background: -webkit-gradient(linear, right top, left top, from(#f6b5b5), to(#f08888));
-  background: linear-gradient(to left, #f6b5b5 0%, #f08888 100%);
-}
-
-table.list.time-entries tbody tr.status-3 td:last-child:before, table.list.issues tbody tr.status-3 td:last-child:before {
-  background: -webkit-gradient(linear, right top, left top, from(#caeda8), to(#b0e47e));
-  background: linear-gradient(to left, #caeda8 0%, #b0e47e 100%);
-}
-
-table.list.time-entries tbody tr.status-2 td:last-child:before, table.list.issues tbody tr.status-2 td:last-child:before {
-  background: -webkit-gradient(linear, right top, left top, from(#cbd6fd), to(#9aaffb));
-  background: linear-gradient(to left, #cbd6fd 0%, #9aaffb 100%);
-}
-
-table.list.time-entries tbody tr.status-1 td:last-child:before, table.list.issues tbody tr.status-1 td:last-child:before {
-  background: -webkit-gradient(linear, right top, left top, from(#f6b5b5), to(#f08888));
-  background: linear-gradient(to left, #f6b5b5 0%, #f08888 100%);
-}
-
 table.list.time-entries tbody tr.time-entry td.subject a, table.list.issues tbody tr.time-entry td.subject a {
   background: white;
   color: #1b1b1b;
@@ -64,9 +42,35 @@ table.list.time-entries tbody tr.time-entry td.subject a.status-1, table.list.is
   background: linear-gradient(to top, #f6b5b5 0%, #f08888 100%);
 }
 
+table.list.time-entries tbody tr.status-1 td.status, table.list.issues tbody tr.status-1 td.status {
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #f6b5b5;
+  text-shadow: -1px -1px 0 #4b4b4b, 1px -1px 0 #4b4b4b, -1px 1px 0 #4b4b4b, 1px 1px 0 #4b4b4b;
+}
+
+table.list.time-entries tbody tr.status-1 td:last-child:before, table.list.issues tbody tr.status-1 td:last-child:before {
+  background: -webkit-gradient(linear, right top, left top, from(#f6b5b5), to(#f08888));
+  background: linear-gradient(to left, #f6b5b5 0%, #f08888 100%);
+}
+
 table.list.time-entries tbody tr.time-entry td.subject a.status-2, table.list.issues tbody tr.time-entry td.subject a.status-2 {
   background: -webkit-gradient(linear, left bottom, left top, from(#cbd6fd), to(#9aaffb));
   background: linear-gradient(to top, #cbd6fd 0%, #9aaffb 100%);
+}
+
+table.list.time-entries tbody tr.status-2 td.status, table.list.issues tbody tr.status-2 td.status {
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #cbd6fd;
+  text-shadow: -1px -1px 0 #4b4b4b, 1px -1px 0 #4b4b4b, -1px 1px 0 #4b4b4b, 1px 1px 0 #4b4b4b;
+}
+
+table.list.time-entries tbody tr.status-2 td:last-child:before, table.list.issues tbody tr.status-2 td:last-child:before {
+  background: -webkit-gradient(linear, right top, left top, from(#cbd6fd), to(#9aaffb));
+  background: linear-gradient(to left, #cbd6fd 0%, #9aaffb 100%);
 }
 
 table.list.time-entries tbody tr.time-entry td.subject a.status-3, table.list.issues tbody tr.time-entry td.subject a.status-3 {
@@ -74,23 +78,71 @@ table.list.time-entries tbody tr.time-entry td.subject a.status-3, table.list.is
   background: linear-gradient(to top, #caeda8 0%, #b0e47e 100%);
 }
 
+table.list.time-entries tbody tr.status-3 td.status, table.list.issues tbody tr.status-3 td.status {
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #caeda8;
+  text-shadow: -1px -1px 0 #4b4b4b, 1px -1px 0 #4b4b4b, -1px 1px 0 #4b4b4b, 1px 1px 0 #4b4b4b;
+}
+
+table.list.time-entries tbody tr.status-3 td:last-child:before, table.list.issues tbody tr.status-3 td:last-child:before {
+  background: -webkit-gradient(linear, right top, left top, from(#caeda8), to(#b0e47e));
+  background: linear-gradient(to left, #caeda8 0%, #b0e47e 100%);
+}
+
 table.list.time-entries tbody tr.time-entry td.subject a.status-4, table.list.issues tbody tr.time-entry td.subject a.status-4 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#f6b5b5), to(#f08888));
-  background: linear-gradient(to top, #f6b5b5 0%, #f08888 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#ffd4a2), to(#ffbc6f));
+  background: linear-gradient(to top, #ffd4a2 0%, #ffbc6f 100%);
+}
+
+table.list.time-entries tbody tr.status-4 td.status, table.list.issues tbody tr.status-4 td.status {
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #ffd4a2;
+  text-shadow: -1px -1px 0 #4b4b4b, 1px -1px 0 #4b4b4b, -1px 1px 0 #4b4b4b, 1px 1px 0 #4b4b4b;
+}
+
+table.list.time-entries tbody tr.status-4 td:last-child:before, table.list.issues tbody tr.status-4 td:last-child:before {
+  background: -webkit-gradient(linear, right top, left top, from(#ffd4a2), to(#ffbc6f));
+  background: linear-gradient(to left, #ffd4a2 0%, #ffbc6f 100%);
 }
 
 table.list.time-entries tbody tr.time-entry td.subject a.status-5, table.list.issues tbody tr.time-entry td.subject a.status-5 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#4d4d4d), to(#343434));
-  background: linear-gradient(to top, #4d4d4d 0%, #343434 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#d6d6d6), to(#bdbdbd));
+  background: linear-gradient(to top, #d6d6d6 0%, #bdbdbd 100%);
+}
+
+table.list.time-entries tbody tr.status-5 td.status, table.list.issues tbody tr.status-5 td.status {
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #d6d6d6;
+  text-shadow: -1px -1px 0 #4b4b4b, 1px -1px 0 #4b4b4b, -1px 1px 0 #4b4b4b, 1px 1px 0 #4b4b4b;
+}
+
+table.list.time-entries tbody tr.status-5 td:last-child:before, table.list.issues tbody tr.status-5 td:last-child:before {
+  background: -webkit-gradient(linear, right top, left top, from(#d6d6d6), to(#bdbdbd));
+  background: linear-gradient(to left, #d6d6d6 0%, #bdbdbd 100%);
 }
 
 table.list.time-entries tbody tr.time-entry td.subject a.status-6, table.list.issues tbody tr.time-entry td.subject a.status-6 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#4d4d4d), to(#343434));
-  background: linear-gradient(to top, #4d4d4d 0%, #343434 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#d6d6d6), to(#bdbdbd));
+  background: linear-gradient(to top, #d6d6d6 0%, #bdbdbd 100%);
 }
 
-tr.priority-1 td {
-  border: 1px solid #e3e3e3 !important;
+table.list.time-entries tbody tr.status-6 td.status, table.list.issues tbody tr.status-6 td.status {
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #d6d6d6;
+  text-shadow: -1px -1px 0 #4b4b4b, 1px -1px 0 #4b4b4b, -1px 1px 0 #4b4b4b, 1px 1px 0 #4b4b4b;
+}
+
+table.list.time-entries tbody tr.status-6 td:last-child:before, table.list.issues tbody tr.status-6 td:last-child:before {
+  background: -webkit-gradient(linear, right top, left top, from(#d6d6d6), to(#bdbdbd));
+  background: linear-gradient(to left, #d6d6d6 0%, #bdbdbd 100%);
 }
 
 tr.priority-1.odd {
@@ -101,20 +153,12 @@ tr.priority-1.even {
   background: rgba(214, 214, 214, 0.6);
 }
 
-tr.priority-2 td {
-  border: 1px solid white !important;
-}
-
 tr.priority-2.odd {
   background: rgba(255, 255, 255, 0.6);
 }
 
 tr.priority-2.even {
   background: rgba(250, 250, 250, 0.6);
-}
-
-tr.priority-3 td {
-  border: 1px solid #fffed1 !important;
 }
 
 tr.priority-3.odd {
@@ -125,10 +169,6 @@ tr.priority-3.even {
   background: rgba(255, 254, 183, 0.6);
 }
 
-tr.priority-4 td {
-  border: 1px solid #ffe0bc !important;
-}
-
 tr.priority-4.odd {
   background: rgba(255, 219, 177, 0.6);
 }
@@ -137,15 +177,105 @@ tr.priority-4.even {
   background: rgba(255, 212, 162, 0.6);
 }
 
-tr.priority-5 td {
-  border: 1px solid #f9cccc !important;
-}
-
 tr.priority-5.odd {
   background: rgba(248, 195, 195, 0.6);
 }
 
 tr.priority-5.even {
   background: rgba(246, 181, 181, 0.6);
+}
+
+tr.tracker-1 td.tracker {
+  position: relative;
+  color: #242424;
+}
+
+tr.tracker-1 td.tracker:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 85%;
+  height: 90%;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(248, 195, 195, 0.5);
+  border-radius: 10px;
+}
+
+tr.tracker-2 td.tracker {
+  position: relative;
+  color: #242424;
+}
+
+tr.tracker-2 td.tracker:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 85%;
+  height: 90%;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+tr.tracker-5 td.tracker {
+  position: relative;
+  color: #242424;
+}
+
+tr.tracker-5 td.tracker:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 85%;
+  height: 90%;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(255, 219, 177, 0.5);
+  border-radius: 10px;
+}
+
+tr.tracker-7 td.tracker {
+  position: relative;
+  color: #242424;
+}
+
+tr.tracker-7 td.tracker:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 85%;
+  height: 90%;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(233, 199, 255, 0.5);
+  border-radius: 10px;
+}
+
+@-webkit-keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
 }
 /*# sourceMappingURL=color-task.css.map */

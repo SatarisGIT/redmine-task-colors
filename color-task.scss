@@ -1,11 +1,12 @@
 
 //   Statuses
-// New:          '.status-1';
-// In progress:  '.status-2';
-// Resolved:     '.status-3';
-// Feedback:     '.status-4';
-// Closed:       '.status-5';
-// Rejected:     '.status-6';
+// New:          		'.status-1';
+// In progress:  		'.status-2';
+// Resolved:     		'.status-3';
+// Feedback:     		'.status-4';
+// Closed:       		'.status-5';
+// Rejected:     		'.status-6';
+
 
 //   Priorities
 // Low:          '.priority-1';
@@ -13,6 +14,30 @@
 // High:         '.priority-3';
 // Urgent:       '.priority-4';
 // Immediate:    '.priority-5';
+
+
+//   Trackers
+// 'Blad':               '.tracker-1';
+// 'Zadanie':            '.tracker-2';
+// 'Etap':               '.tracker-5';
+// 'Grupa zagadnień':    '.tracker-7';
+
+
+// -----------------------------------------------------------
+//   Default
+div {
+     &.issue {
+          background: rgb(255, 255, 245);
+     }
+}
+
+
+#header  {
+     & > h1 {
+          background: none;
+     }
+}
+
 
 // -----------------------------------------------------------
 
@@ -27,9 +52,72 @@ $colors: (
 
      yellow: #fffeb7,
      orange: #ffd4a2,
+	 
+     purple: #e3b8ff,
 
-     black: rgb(77, 77, 77)
+     black: rgb(77, 177, 77)
 );
+
+
+@mixin blinker {
+     animation-name: blinker;
+     animation-duration: 0.6s;
+     animation-iteration-count: infinite;
+     animation-direction: alternate;
+}
+
+
+@mixin statusColor($status, $color, $blinkerInclude: false) {
+
+     $gotColor: map-get($colors, $color);
+
+     tr.time-entry {
+          td.subject {
+               //Statuses at 
+               a.status-#{$status} {
+                    background: linear-gradient(to top, $gotColor 0%, darken($gotColor, 10) 100%);
+                    @if ($blinkerInclude == true) {
+                         @include blinker;
+                    }
+               }
+          }
+     }
+
+
+     tr.status-#{$status} {
+          td {
+               &.status {
+
+                    $strokeColor: rgb(75, 75, 75);
+                    
+                    // text-decoration: underline overline $gotColor;
+                    font-size: 0.7rem;
+                    font-family: sans-serif;
+                    font-weight: 700;
+
+                    color: $gotColor;
+                    text-shadow: -1px -1px 0 $strokeColor, 1px -1px 0 $strokeColor, -1px 1px 0 $strokeColor, 1px 1px 0 $strokeColor;
+
+                    //-webkit-text-stroke: 1px $strokeColor;
+
+                    @if ($blinkerInclude == true) {
+                         @include blinker;
+                    }
+               }
+
+
+               &:last-child:before {
+                    background: linear-gradient(to left, $gotColor 0%, darken($gotColor, 10) 100%);
+
+                    @if ($blinkerInclude == true) {
+                         @include blinker;
+                    }
+
+               }
+          }
+     }
+}
+
 
 .autoscroll {
      overflow: visible;
@@ -66,33 +154,7 @@ table.list.time-entries, table.list.issues {
                
           }
           
-     
-
-          //Right panel colour status lights
-          tr.status-6 td:last-child:before {
-               background: linear-gradient(to left, map-get($colors, black) 0%, darken(map-get($colors, black), 10) 100%);
-          }
-
-          tr.status-5 td:last-child:before {
-               background: linear-gradient(to left, map-get($colors, black) 0%, darken(map-get($colors, black), 10) 100%);
-          }
-
-          tr.status-4 td:last-child:before {
-               background: linear-gradient(to left, map-get($colors, red) 0%, darken(map-get($colors, red), 10) 100%);
-          }
-
-          tr.status-3 td:last-child:before {
-               background: linear-gradient(to left, map-get($colors, green) 0%, darken(map-get($colors, green), 10) 100%);
-          }
-
-          tr.status-2 td:last-child:before {
-               background: linear-gradient(to left, map-get($colors, blue) 0%, darken(map-get($colors, blue), 10) 100%);
-          }
-
-          tr.status-1 td:last-child:before {
-               background: linear-gradient(to left, map-get($colors, red) 0%, darken(map-get($colors, red), 10) 100%);
-          }
-
+       
           tr.time-entry {
 
                td.subject {
@@ -108,41 +170,27 @@ table.list.time-entries, table.list.issues {
                          display: inline-block;
                     }
 
-                    //Statuses at 
-                    a.status-1 {
-                         background: linear-gradient(to top, map-get($colors, red) 0%, darken(map-get($colors, red), 10) 100%);
-                    }
-                    a.status-2 {
-                         background: linear-gradient(to top, map-get($colors, blue) 0%, darken(map-get($colors, blue), 10) 100%);
-                    }
-                    a.status-3 {
-                         background: linear-gradient(to top, map-get($colors, green) 0%, darken(map-get($colors, green), 10) 100%);
-
-                    }
-                    a.status-4 {
-                         background: linear-gradient(to top, map-get($colors, red) 0%, darken(map-get($colors, red), 10) 100%);
-                    }
-                    a.status-5 {
-                         background: linear-gradient(to top, map-get($colors, black) 0%, darken(map-get($colors, black), 10) 100%);
-                    }
-                    a.status-6 {
-                         background: linear-gradient(to top, map-get($colors, black) 0%, darken(map-get($colors, black), 10) 100%);
-                    }
                }
           }
+
+          
+          // Right panel colour status lights & status underlines
+          // Other statuses colors
+          @include statusColor(1, red);
+          @include statusColor(2, blue);
+          @include statusColor(3, green);
+          @include statusColor(4, orange);
+          @include statusColor(5, gray);
+          @include statusColor(6, gray);
+  
+     
      }
 
 }
 
 
-
-
 @mixin priority($priority, $color) {
      tr.#{$priority} {
-
-          td {
-               border: 1px solid lighten(map-get($colors, $color), 5) !important;
-          }
      
           &.odd { 
                background: lighten(rgba(map-get($colors,  $color), 0.6), 3); 
@@ -153,10 +201,52 @@ table.list.time-entries, table.list.issues {
           }
      }
 }
-   
+
 
 @include priority(priority-1, gray);
 @include priority(priority-2, white);
 @include priority(priority-3, yellow);
 @include priority(priority-4, orange);
 @include priority(priority-5, red);
+
+
+@mixin tracker($tracker, $color) {
+     tr.#{$tracker} {
+          td.tracker { 
+
+               position: relative;
+               color: rgb(36, 36, 36);
+
+               &:before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 85%;
+                    height: 90%;
+                    top: 5%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: lighten(rgba(map-get($colors,  $color), 0.5), 3); 
+                    border-radius: 10px;
+               }
+
+          }
+     }
+}
+
+
+@include tracker(tracker-1, red);
+@include tracker(tracker-2, white);
+@include tracker(tracker-5, orange);
+@include tracker(tracker-7, purple);
+
+
+@keyframes blinker {
+     from {
+          opacity: 1;
+     }
+
+     to {
+          opacity: 0.5;
+     }
+}
